@@ -1,0 +1,56 @@
+﻿@model TheSwitchFoodBar.Models.User
+
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<div class="bodydiv">
+    <div class="leftdiv" style="background-image:url(../img/jack-shingai-MDg4GNYSRBA-unsplash.jpg);"></div>
+    <div class="rightdiv">
+        <div class="form">
+            <form asp-action="submit" id="form_id">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <h2 class="form_h1" style="color: lightgrey;">Sign Up</h2>
+                <div class="form-group">
+                    @*<label asp-for="FirstName" class="control-label"></label>*@
+                    <input asp-for="FirstName" type="name" class="login" id="firstname" placeholder="First Name" required />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    @* <label asp-for="LastName" class="control-label"></label>*@
+                    <input asp-for="LastName" type="name" class="login" id="lastname" placeholder="Last Name" required />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    @*<label asp-for="PhoneNumber" class="control-label"></label>*@
+                    <input asp-for="PhoneNumber" class="login" id="telephone" type="tel" placeholder="Phone Number" required />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    @*<label asp-for="Email" class="control-label"></label>*@
+                    <input asp-for="Email" type="email" class="login" id="email" placeholder="Email" required />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    @*<label asp-for="Password" class="control-label"></label>*@
+                    <input asp-for="Password" class="login" id="password" placeholder="Password" required />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    @*<label asp-for="Password" class="control-label"></label>*@
+                    <input asp-for="ConfirmPassword" class="login" id="confirmpassword" placeholder="Confirm Password" required />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    <button type="button" value="Submit" class="loginbutton" id="btn_id" onclick="submit_by_id()" style="border-radius: 5px">Sumbit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

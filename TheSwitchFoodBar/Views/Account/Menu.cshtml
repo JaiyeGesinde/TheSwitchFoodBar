@@ -1,0 +1,1164 @@
+﻿
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TheSwitchFoodBar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="AboutUs">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Checkout">Checkout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Account">Account</a>
+                    </li>
+                </ul>
+               @* <partial name="_LoginPartial" />*@
+            </div>
+        </div>
+    </nav>
+</header>
+<section>
+<div class="container">
+        <h2
+          style="color: lightgrey; text-align: center; font-family: baskerville">
+          STARTERS
+        </h2>
+        <br />
+        <div class="img-grid">
+          <!-- card 1 -->
+          <div
+            class="new-card"
+            style="background-image: url(../img/Prawn\ Cocktail.jpg);">
+          <a
+                  href="#prawncocktail"
+                  onclick="OpenPopup('popup')"
+                  style="color: lightgrey">
+            <div class="new-card-body">
+              <h4 class="food-description-header">
+                Classic Prawn Cocktail
+              </h4>
+              <p class="food-description-body">
+                Tender king prawns on a salad bed, marinated in our special Cocktail sauce and served in a Martini glass.
+              </p>
+              <p class="food-description-body">N2,500</p>
+            </div>
+            </a>
+          </div>
+          <div class="popup" id="popup">
+            <div style="padding-right: 20px;">
+              <video
+                src="../Video/Prawn Cocktail Video.mp4"
+                muted
+                autoplay
+                loop
+                height="300"
+                width="533"
+                controls>
+            </video><br>
+              <h5>Classic Prawn Cocktail</h5>
+              <p>
+                Tender king prawns on a salad bed, marinated in our special Cocktail sauce and served in a Martini glass.
+              </p>
+              <button class="loginbutton" type="button" onclick="ClosePopup('popup')">
+                Back
+              </button>
+            </div>
+            <div>
+            <div class="ingredient">
+              <div>
+              <h6>Main Ingredients:</h6>
+              <p>100% Free range prawns, Lettuce, Speacial Cocktail sauce, Lemon juice, Paprika</p>
+              <h6>Optional:</h6>
+              <ul class="menu-option">
+                <form asp-action="submit" id="foodForm">
+                  <div>         
+                    <label>Tomato:</label>
+                    <input type="number" min="0" max="3" value="2" style="height: 20px; width: 35px;" name="tomato">
+                  </div>
+                  <div>
+                    <label>Avocado:</label>
+                    <select name="avocado">
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Brandy:</label>
+                  <select name="brandy">
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                  <input type="text" name="foodChoice" hidden value="pawns">
+                  </div>
+                    <div class="menu-btn-wrapper">
+                        <button class="loginbutton" type="submit">Place Order</button>
+                    </div>
+                </form>
+              </ul>
+            </div>
+            </div>
+            <div class="comments"> 
+              <h6 style="padding: 10px">Comments</h6>
+            </div>
+          </div>
+          </div>
+
+          <!-- card 2 -->
+          <div
+            class="new-card"
+            style="background-image: url(../img/3\ sauce\ wings.jpg);">
+          <a
+                  href="#3saucewings"
+                  onclick="OpenPopup('popup1')"
+                  style="color: lightgrey"
+                  >
+            <div class="new-card-body">
+              <h4 class="food-description-header">
+                3 Sauce Wings
+              </h4>
+              <p class="food-description-body">
+                Mouthwatering chicken wings coated with Salted Egg Sauce, Classic BBQ Sauce and Sweet Chilli Sauce.
+              </p>
+              <p class="food-description-body">N2,500</p>
+            </div>
+            </a>
+          </div>
+          <div class="popup" id="popup1">
+            <div style="padding-right: 20px;">
+              <video
+                src="../Video/3 Sauce Wings.mp4"
+                muted
+                autoplay
+                loop
+                height="300"
+                width="533"
+                controls>
+              </video><br>
+              <h6>3 Sauce Wings</h6>
+              <p>
+                Mouthwatering chicken wings coated with Salted Egg Sauce, Classic BBQ Sauce and Sweet Chilli Sauce.
+              </p>
+              <button class="loginbutton" type="button" onclick="ClosePopup('popup1')">
+                Back
+              </button>
+            </div>
+            <div>
+              <div class="ingredient">
+                <div>
+                <h6>Main Ingredients:</h6>
+                <p>Buffalo Chicken Wings, Egg, BBQ Sauce, Sweet Chilli Sauce</p>
+                <h6>Optional:</h6>
+                <p>Not available for this starter</p>
+                <div class="menu-btn-wrapper">
+                  <button class="loginbutton" type="button">Place Order</button>
+                </div>
+              </div>
+              </div>
+            <div class="comments"> 
+              <h6>Comments</h6>
+            </div>
+          </div>
+          </div>
+
+          <!-- card 3 -->
+          <div
+            class="new-card"
+            style="background-image: url(../img/Sushi.jpg);">
+          <a
+          href="#sushi"
+          onclick="OpenPopup('popup3')"
+          style="color: lightgrey">
+            <div class="new-card-body">
+              <h4 class="food-description-header">
+                Sushi Roulette
+              </h4>
+              <br/>
+              <p class="food-description-body">
+               Tasty rolls in a variety of classic flavours.
+              </p>
+              <p class="food-description-body">N2,500</p>
+            </div>
+            </a>
+          </div>
+          <div class="popup" id="popup3">
+            <div style="padding-right: 20px;">
+              <video
+                src="../Video/Sushi promo video _ Shot on BMPCC 6K.mp4"
+                muted
+                autoplay
+                loop
+                height="300"
+                width="533"
+                controls>
+            </video><br>
+              <h6>Sushi Roulette</h6>
+              <p>
+                Tasty rolls in a variety of classic flavours.
+              </p>
+              <button class="loginbutton" type="button" onclick="ClosePopup('popup3')">
+                Back
+              </button>
+            </div>
+            <div>
+              <div class="ingredient">
+                <div>
+                <h6>Main Ingredients:</h6>
+                <p>Rice, Cucumber, Sea weed wrap, Salmon, Avocado, Prawns, Sesame seeds</p>
+                <h6>Optional:</h6>
+                <p>Not available for this starter</p>
+                <div class="menu-btn-wrapper">
+                  <button class="loginbutton" type="button">Place Order</button>
+                </div>
+              </div>
+              </div>
+            <div class="comments"> 
+              <h6>Comments</h6>
+            </div>
+          </div>
+          </div>
+
+          <!-- card 4 -->
+          <div
+            class="new-card"
+            style="background-image: url(../img/Greek\ Salad.jpg);">
+            <a
+                  href="#greeksalad"
+                  onclick="OpenPopup('popup4')"
+                  style="color: lightgrey">
+            <div class="new-card-body">
+              <h4 class="food-description-header">
+                Greek Salad
+              </h4>
+              <p class="food-description-body">
+                A classic combination of sliced cucumbers, tomatoes, bell pepper, red onion, olives, and feta cheese topped with lemon 
+                juice.
+              </p>
+              <p class="food-description-body">N2,500</p>
+            </div>
+            </a>
+          </div>
+          <div class="popup" id="popup4">
+            <div style="padding-right: 20px;">
+              <video
+                src="../Video/Greek salad.mp4"
+                muted
+                autoplay
+                loop
+                height="300"
+                width="533"
+                controls>
+            </video><br>
+              <h6>Greek Salad</h6>
+              <p>A classic combination of sliced cucumbers, tomatoes, bell pepper, red onion, olives, and feta cheese topped with lemon 
+                juice.
+              </p>
+              <button class="loginbutton" type="button" onclick="ClosePopup('popup4')">
+                Back
+              </button>
+            </div>
+            <div>
+              <div class="ingredient">
+                <div>
+                <h6>Main Ingredients:</h6>
+                <p>Baby Tomato, Cucumber, Feta cheese, Bell pepper, Red onion, Olives, Lemon juice</p>
+                <h6>Optional:</h6>
+                <ul class="menu-option">
+                  <div>
+                    <label>Tomato:</label>
+                  <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                  </div>
+                  <div>
+                    <label>Cucumber:</label>
+                    <select>
+                      <option>Yes</option>
+                      <option>No</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label>Red onion:</label>
+                  <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                  </div>
+                  <div>
+                    <label>Olives:</label>
+                  <select>
+                    <option>Yes</option>
+                    <option>No</option>
+                  </select>
+                  </div>
+                </ul>
+                <div class="menu-btn-wrapper">
+                  <button class="loginbutton" type="button">Place Order</button>
+                </div>
+              </div>
+              </div>
+            <div class="comments"> 
+              <h6>Comments</h6>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br /><br />
+<section>
+    <div class="container">
+        <h2 style="color: lightgrey; text-align: center; font-family: baskerville">MAINS</h2>
+        <br />
+        <div class="img-grid">
+            <!-- card 1 -->
+            <div class="new-card"
+                 style="background-image: url(../img/Burger.jpg);">
+                <a href="#burger"
+                   onclick="OpenPopup('popup5')"
+                   style="color: lightgrey">
+                    <div class="new-card-body">
+                        <h4 class="food-description-header">
+                            The Heavy hitting Burger
+                        </h4>
+                        <p class="food-description-body animate__animated animate__slideInRight">
+                            Juicy Bacon and cheese burger that hits the spot.
+                        </p>
+                        <p class="food-description-body">N5,500</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="popup" id="popup5">
+                <div style="padding-right: 20px;">
+                    <video src="../Video/the_heavy_hitting_burger_promo_video_h264_31942.mp4"
+                           muted
+                           autoplay
+                           loop
+                           height="300"
+                           width="533"
+                           controls>
+                    </video><br>
+                    <h6>The Heavy hitting Burger</h6>
+                    <p>
+                        Juicy gourmet cheese burger that hits the spot.
+                    </p>
+                    <button class="loginbutton" type="button" onclick="ClosePopup('popup5')">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <div class="ingredient">
+                        <div>
+                            <h6>Main Ingredients:</h6>
+                            <p>100% Free range beef, Lettuce, Speacial Cocktail sauce, Tomato,Ketchup</p>
+                            <h6>Optional:</h6>
+                            <ul class="menu-option">
+                                <div>
+                                    <label>Cheese:</label><input type="number" min="0" max="3" value="2" style="height: 20px; width: 35px;">
+                                </div>
+                                <div>
+                                    <label>Tomato:</label>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Pickles:</label>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Onions:</label>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </ul>
+                            <div class="menu-btn-wrapper">
+                                <button class="loginbutton" type="button">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <h6>Comments</h6>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- card 2 -->
+            <div class="new-card"
+                 style="
+            background-image: url(../img/Pizza.jpg);">
+                <a href="#pizza"
+                   onclick="OpenPopup('popup6')"
+                   style="color: lightgrey">
+                    <div class="new-card-body">
+                        <h4 class="food-description-header">
+                            Gourmet Pizza
+                        </h4>
+                        <p class="food-description-body animate__animated animate__slideInRight">
+                            Rich and flavourful wood-fired oven Pizza.
+                        </p>
+                        <p class="food-description-body">N4,500</p>
+                    </div>
+                </a>
+            </div>
+            <div class="popup" id="popup6">
+                <div style="padding-right: 20px;">
+                    <video src="../Video/Pizza - Promo Video.mp4"
+                           muted
+                           autoplay
+                           loop
+                           height="300"
+                           width="533"
+                           controls>
+                    </video><br>
+
+                    <h6>Gourmet Pizza</h6>
+                    <p>
+                        Rich and flavourful wood-fired oven Pizza.
+                    </p>
+                    <button class="loginbutton" type="button" onclick="ClosePopup('popup6')">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <div class="ingredient">
+                        <div>
+                            <h6>Main Ingredients:</h6>
+                            <p>Gluten free bread, Rockett, Tomato sauce, Olive oil, Basil</p>
+                            <h6 style="padding: 10px;">Optional:</h6>
+                            <ul class="menu-option">
+                                <div>
+                                    <label>Tomato:</label>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Pepperoni:</label>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Mozzarella:</label>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </ul>
+                            <div class="menu-btn-wrapper">
+                                <button class="loginbutton" type="button">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <h6>Comments</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 3 -->
+            <div class="new-card"
+                 style="
+            background-image: url(../img/Pasta.jpg);">
+                <a href="#pasta"
+                   onclick="OpenPopup('popup7')"
+                   style="color: lightgrey">
+                    <div class="new-card-body">
+                        <h4 class="food-description-header">
+                            Spaghetti Delizioso
+                        </h4>
+                        <p class="food-description-body animate__animated animate__slideInRight">
+                            Great tasting authentic Italian Spaghetti.
+                        </p>
+                        <p class="food-description-body">N3,500</p>
+                    </div>
+                </a>
+            </div>
+            <div class="popup" id="popup7">
+                <div style="padding-right: 20px;">
+                    <video src="../Video/Pasta.mp4"
+                           muted
+                           autoplay
+                           loop
+                           height="300"
+                           width="533"
+                           controls>
+                    </video><br>
+
+                    <h6>Spaghetti Delizioso</h6>
+                    <p>
+                        Great tasting authentic Italian Spaghetti.
+                    </p>
+                    <button class="loginbutton" type="button" onclick="ClosePopup('popup7')">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <div class="ingredient">
+                        <div>
+                            <h6>Main Ingredients:</h6>
+                            <p>Spaghetti, Olive oil, Tomato sauce, Onions, Basil</p>
+                            <h6>Optional:</h6>
+                            <ul class="menu-option">
+                                <div>
+                                    <label>Prawns:</label>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label>Parmasan:</label>
+                                    <select>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </div>
+                            </ul>
+                            <div class="menu-btn-wrapper">
+                                <button class="loginbutton" type="button">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <h6>Comments</h6>
+                    </div>
+                </div>
+            </div>
+
+                <!-- card 4 -->
+                <div class="new-card"
+                     style="
+            background-image: url(../img/Fried\ Rice.jpg);">
+                    <a href="#fried-rice"
+                       onclick="OpenPopup('popup8')"
+                       style="color: lightgrey">
+                        <div class="new-card-body">
+                            <h4 class="food-description-header">
+                                Switch Fried Rice
+                            </h4>
+                            <p class="food-description-body">
+                                iSwitch's take on the classic Fried Rice.
+                            </p>
+                            <p class="food-description-body">N4,500</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="popup" id="popup8">
+                    <div style="padding-right: 20px;">
+                        <video src="./Video/Fried Rice _ Cinematic Video.mp4"
+                               muted
+                               autoplay
+                               loop
+                               height="300"
+                               width="533"
+                               controls>
+                        </video><br>
+
+                        <h6>Switch Fried Rice</h6>
+                        <p>
+                            iSwitch's take on the classic Fried Rice.
+                        </p>
+                        <button class="loginbutton" type="button" onclick="ClosePopup('popup8')">
+                            Back
+                        </button>
+                    </div>
+                    <div>
+                        <div class="ingredient">
+                            <div>
+                                <h6>Main Ingredients:</h6>
+                                <p>Rice, White Onions, Soy sauce, Spring Onions, Egg</p>
+                                <h6>Optional:</h6>
+                                <ul class="menu-option">
+                                    <div>
+                                        <label>Beef:</label>
+                                        <select>
+                                            <option>Yes</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label>Carrot:</label>
+                                        <select>
+                                            <option>Yes</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label>Prawns:</label>
+                                        <select>
+                                            <option>Yes</option>
+                                            <option>No</option>
+                                        </select>
+                                    </div>
+                                </ul>
+                                <div class="menu-btn-wrapper">
+                                    <button class="loginbutton" type="button">Place Order</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comments">
+                            <h6>Comments</h6>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+<br />
+<br />
+<section>
+    <div class="container">
+        <h2 style="color: lightgrey; text-align: center; font-family: baskerville">DESERTS</h2>
+        <br />
+        <div class="img-grid">
+            <!-- card 1 -->
+            <div class="new-card"
+                 style="
+            background-image: url(../img/Assorted\ Doughnuts.jpg);">
+                <a href="#doughnut"
+                   onclick="OpenPopup('popup9')"
+                   style="color: lightgrey">
+                    <div class="new-card-body">
+                        <h4 class="food-description-header">
+                            Assorted mini Doughnuts
+                        </h4>
+                        <p class="food-description-body">
+                            Give your tastebuds a treat with our range of assorted mini Doughnuts.
+                        </p>
+                        <p class="food-description-body">N3,500</p>
+                    </div>
+                </a>
+            </div>
+            <div class="popup" id="popup9">
+                <div style="padding-right: 20px;">
+                    <video src="../Video/Assorted glazed Doughnuts.mp4"
+                           muted
+                           autoplay
+                           loop
+                           height="300"
+                           width="533"
+                           controls>
+                    </video><br>
+
+                    <h6>Assorted mini Doughnuts</h6>
+                    <p>
+                        Give your tastebuds a treat with our range of assorted mini Doughnuts.
+                    </p>
+                    <button class="loginbutton" type="button" onclick="ClosePopup('popup9')">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <div class="ingredient">
+                        <div>
+                            <h6>Main Ingredients:</h6>
+                            <p>Gluten free Flour, Sugar. (Might contain nuts)</p>
+                            <h6>Optional:</h6>
+                            Not Available for this item.
+
+                            <div class="menu-btn-wrapper">
+                                <button class="loginbutton" type="button">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <h6>Comments</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 2 -->
+            <div class="new-card"
+                 style="
+            background-image: url(../img/Churro.jpg);">
+                <a href="#churro"
+                   onclick="OpenPopup('popup10')"
+                   style="color: lightgrey">
+                    <div class="new-card-body">
+                        <h4 class="food-description-header">
+                            Churro
+                        </h4>
+                        <p class="food-description-body">
+                            Sugared fried dough of Spanish-Portugese origin, our Churros are to die for.
+                        </p>
+                        <p class="food-description-body">N2000</p>
+                    </div>
+                </a>
+            </div>
+            <div class="popup" id="popup10">
+                <div style="padding-right: 20px;">
+                    <video src="../Video/Churro Promo Video.mp4"
+                           muted
+                           autoplay
+                           loop
+                           height="300"
+                           width="533"
+                           controls>
+                    </video><br>
+
+                    <h6>Churro</h6>
+                    <p>
+                        Sugared fried dough of Spanish-Portugese origin, our Churros are to die for.
+                    </p>
+                    <button class="loginbutton" type="button" onclick="ClosePopup('popup10')">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <div class="ingredient">
+                        <div>
+                            <h6>Main Ingredients:</h6>
+                            <p>Gluten free Flour, Sugar. (Might contain nuts)</p>
+                            <h6>Optional:</h6>
+                            Not Available for this item.
+
+                            <div class="menu-btn-wrapper">
+                                <button class="loginbutton" type="button">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <h6>Comments</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 3 -->
+            <div class="new-card"
+                 style="
+            background-image: url(../img/Almond\ Crossaint.jpg);">
+                <a href="#almontcrossaint"
+                   onclick="OpenPopup('popup11')"
+                   style="color: lightgrey">
+                    <div class="new-card-body">
+                        <h4 class="food-description-header">
+                            Crossaint with a twist
+                        </h4>
+                        <p class="food-description-body">
+                            Almond Crossaint with a sweet filling, enough to satisfy and sweet craving.
+                        </p>
+                        <p class="food-description-body">N2000</p>
+                    </div>
+                </a>
+            </div>
+            <div class="popup" id="popup11">
+                <div style="padding-right: 20px;">
+                    <video src="../Video/Almond Crossaint.mp4"
+                           muted
+                           autoplay
+                           loop
+                           height="300"
+                           width="533"
+                           controls>
+                    </video><br>
+
+                    <h6>Crossaint with a twist</h6>
+                    <p>
+                        Almond Crossaint with a sweet filling, enough to satisfy and sweet craving.
+                    </p>
+                    <button class="loginbutton" type="button" onclick="ClosePopup('popup11')">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <div class="ingredient">
+                        <div>
+                            <h6>Main Ingredients:</h6>
+                            <p>Gluten free Flour, Sugar, Almonds (Might contain other nuts), Chocolate, Cream, Custard.
+                            </p>
+                            <h6>Options:</h6>
+                            <div class="crossaint">
+                                <div>
+                                    <input type="radio" id="chocolate" name="filling" value="Chocolate">
+                                    <label for="chocolate">Chocolate</label><br>
+                                </div>
+                                <div>
+                                    <input type="radio" id="custard" name="filling" value="Custard">
+                                    <label for="custard">Custard</label><br>
+                                </div>
+                                <div>
+                                    <input type="radio" id="strawberry-cream" name="filling" value="Strawberry-Cream">
+                                    <label for="strawberry-cream">Strawberry Cream</label><br>
+                                </div>
+                            </div>
+
+                            <div class="menu-btn-wrapper">
+                                <button class="loginbutton" type="button">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <h6>Comments</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 4 -->
+            <div class="new-card"
+                 style="
+            background-image: url(../img/Chocolate\ Chip\ Cookies.jpg);">
+                <a href="#chocolatechipcookies"
+                   onclick="OpenPopup('popup12')"
+                   style="color: lightgrey">
+                    <div class="new-card-body">
+                        <h4 class="food-description-header">
+                            Chocolate Chip Cookies
+                        </h4>
+                        <p class="food-description-body">
+                            Classic Chocolate Chip Cookies.
+                        </p>
+                        <p class="food-description-body">N2000</p>
+                    </div>
+                </a>
+            </div>
+            <div class="popup" id="popup12">
+                <div style="padding-right: 20px;">
+                    <video src="../Video/Chocolate Chip Cookies.mp4"
+                           muted
+                           autoplay
+                           loop
+                           width="533"
+                           height="300"
+                           controls>
+                    </video><br>
+
+                    <h6>Chocolate Chip Cookies</h6>
+                    <p>
+                        Classic Chocolate Chip Cookies.
+                    </p>
+                   
+                    <button class="loginbutton" type="button" onclick="ClosePopup('popup12')">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <div class="ingredient">
+                        <div>
+                            <h6>Main Ingredients:</h6>
+                            <p>Gluten free Flour, Sugar, Chocolate. (Might contain nuts)</p>
+                            <h6>Optional:</h6>
+                            Not Available for this item.
+
+                            <div class="menu-btn-wrapper">
+                                <button class="loginbutton" type="button">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <h6>Comments</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br />
+<br />
+<section>
+    <div class="container">
+        <h2 style="color: lightgrey; text-align: center; font-family: baskerville">DRINKS</h2>
+        <br />
+        <div class="img-grid">
+            <!-- card 1 -->
+            <div class="new-card"
+                 style="
+            background-image: url(../img/Soda.jpg);">
+                <a href="#soda"
+                   onclick="OpenPopup('popup13')"
+                   style="color: lightgrey">
+                    <div class="new-card-body">
+                        <h4 class="food-description-header">
+                            Soda
+                        </h4>
+                    
+                        <p class="food-description-body">
+                            Refreshing fizzy soda served over ice with a slice of lemon.
+                        </p>
+                        <p class="food-description-body">N1000</p>
+                    </div>
+                </a>
+            </div>
+            <div class="popup" id="popup13">
+                <div style="padding-right: 20px;">
+                    <video src="../Video/Soda.mp4"
+                           muted
+                           autoplay
+                           loop
+                           width="533"
+                           height="300"
+                           controls>
+                    </video><br>
+
+                    <h6>Soda</h6>
+                    <p>
+                        Refreshing fizzy soda served over ice with a slice of lemon.
+                    </p>
+                    
+                    <button class="loginbutton" type="button" onclick="ClosePopup('popup13')">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <div class="ingredient">
+                        <div>
+                            <h6>Main Ingredients:</h6>
+                            <p>Not available for this item.</p>
+                            <h6>Options:</h4>
+                             <div class="crossaint">
+                                <div>
+                                    <input type="radio" id="Coca Cola" name="filling" value="Chocolate">
+                                    <label for="chocolate">Coca Cola</label><br>
+                                </div>
+                                <div>
+                                    <input type="radio" id="Sprite" name="filling" value="Custard">
+                                    <label for="custard">Sprite</label><br>
+                                </div>
+                                </div>
+                            <div class="menu-btn-wrapper">
+                                <button class="loginbutton" type="button">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <h6>Comments</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 2 -->
+            <div class="new-card"
+                 style="
+            background-image: url(../img/Mojito.jpg);">
+                <a href="#mojito"
+                   onclick="OpenPopup('popup14')"
+                   style="color: lightgrey">
+                    <div class="new-card-body">
+                        <h4 class="food-description-header">
+                            Mojito
+                        </h4>
+                        
+                        <p class="food-description-body">
+                            Traditional Cuban punch.
+                        </p>
+                        <p class="food-description-body">N2500</p>
+                    </div>
+                </a>
+            </div>
+            <div class="popup" id="popup14">
+                <div style="padding-right: 20px;">
+                    <video src="../Video/Mojito Cocktail Cinematic B Roll _ Sony A7III _ Inspired by Daniel Schiffer.mp4"
+                           muted
+                           autoplay
+                           loop
+                           width="533"
+                           height="300"
+                           controls>
+                    </video><br><br>
+
+                    <h6>Mojito</h6>
+                    <p>
+                        Traditional Cuban punch.
+                    </p>
+                    
+                    <button class="loginbutton" type="button" onclick="ClosePopup('popup14')">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <div class="ingredient">
+                        <div>
+                            <h6>Main Ingredients:</h6>
+                            <p>Mint leaves, White Rum, Sugar, Lime juice.</p>
+                            <h6>Optional:</h6>
+                            Not Available for this item.
+
+                            <div class="menu-btn-wrapper">
+                                <button class="loginbutton" type="button">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <h6>Comments</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 3 -->
+            <div class="new-card"
+                 style="
+            background-image: url(../img/Beer.jpg);">
+                <a href="#beer"
+                   onclick="OpenPopup('popup15')"
+                   style="color: lightgrey">
+                    <div class="new-card-body">
+                        <h4 class="food-description-header">
+                            Pint o' Beer
+                        </h4>
+                        
+                        <p class="food-description-body">
+                            Thirst quenching pint of beer.
+                        </p>
+                        <p class="food-description-body">N1500</p>
+                    </div>
+                </a>
+            </div>
+            <div class="popup" id="popup15">
+                <div style="padding-right: 20px;">
+                    <video src="../Video/Beer Glass Free Video Background ,Free Stock Footage,No Copyright, Animations.mp4"
+                           muted
+                           autoplay
+                           loop
+                           width="533"
+                           height="300"
+                           controls>
+                    </video><br>
+
+                    <h6>Pint o' Beer</h6>
+                    <p>
+                        Thirst quenching pint of beer.
+                    </p>
+                    
+                    <button class="loginbutton" type="button" onclick="ClosePopup('popup15')">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <div class="ingredient">
+                        <div>
+                            <h6>Main Ingredients:</h6>
+                            <p>Not available for this item.</p>
+                            <h6>Optional:</h6>
+                            Not Available for this item.
+
+                            <div class="menu-btn-wrapper">
+                                <button class="loginbutton" type="button">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <h6>Comments</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- card 4 -->
+            <div class="new-card"
+                 style="
+          background-image: url(../img/water.jpg);">
+                <a href="#water"
+                   onclick="OpenPopup('popup16')"
+                   style="color: lightgrey">
+                    <div class="new-card-body">
+                        <h4 class="food-description-header">
+                            Sparkling Water
+                        </h4>
+                        
+                        <p class="food-description-body">
+                            Sparkling mineral water served over ice with a slice of lemon.
+                        </p>
+                        <p class="food-description-body">N1200</p>
+                    </div>
+                </a>
+            </div>
+            <div class="popup" id="popup16">
+                <div style="padding-right: 20px;">
+                    <video src="../Video/_Sparkling Mineral Water_ - Cinematic Commercial.mp4"
+                           muted
+                           autoplay
+                           loop
+                           width="533"
+                           height="300"
+                           controls>
+                    </video><br>
+
+                    <h6>Sparkling Water</h6>
+                    <p>
+                        Sparkling mineral water served over ice with a slice of lemon.
+                    </p>
+                    
+                    <button class="loginbutton" type="button" onclick="ClosePopup('popup16')">
+                        Back
+                    </button>
+                </div>
+                <div>
+                    <div class="ingredient">
+                        <div>
+                            <h6>Main Ingredients:</h6>
+                            <p>Not available for this item.</p>
+                            <h6>Optional:</h6>
+                            Not Available for this item.
+
+                            <div class="menu-btn-wrapper">
+                                <button class="loginbutton" type="button">Place Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments">
+                        <h6>Comments</h6>
+                    </div>
+                </div>
+            </div>
+</section>
+
+<br />
+<br />
+
+
+
+
+
+
+
+
+
+<footer class="border-top footer text-muted">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+           @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TheSwitchFoodBar</a>*@
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+   <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="ContactUs">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Instagram">Instagram</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Twitter">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+</footer>
+
+

@@ -1,0 +1,43 @@
+﻿@model TheSwitchFoodBar.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="bodydiv">
+    <div class="leftdiv">
+        <video src="../Video/Landing Video.mp4" muted autoplay loop height="600" width="830" style="border: none;">
+        </video>
+    </div>
+    <div class="rightdiv">
+        <div class="form">
+            <form asp-action="Submit" id="form_id">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <h2 class="form_h1" style="color: lightgrey;">Welcome to <br>The Switch Food Bar</h2>
+                <h4 style="color: lightgrey;">Login to place your order</h4><br><br>
+                <div class="form-group">
+                    @*<label asp-for="Email" class="control-label"></label>*@
+                    <input asp-for="Email" class="login" id="email" type="email" placeholder="Email" required />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    @*<label asp-for="Password" class="control-label"></label>*@
+                    <input asp-for="Password" class="login" id="password" type="password" placeholder="Password" required />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div><br />
+                <div class="form-group">
+                    <button type="button" value="Submit" class="loginbutton" id="btn_id" onclick="submit_by_id()" style="border-radius: 5px">Sumbit</button>
+                    <div class="innerformdiv" style="color: lightgrey;">Don't have an account? <a asp-controller="Account" asp-action="SignUp" style="color: rgb(82, 109, 198);">Sign Up</a></div>
+                    <div class="guestdiv" style="color: lightgrey;">Order as a &nbsp;<a href="./Menu.html" style="color: rgb(82, 109, 198);">Guest</a></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+
